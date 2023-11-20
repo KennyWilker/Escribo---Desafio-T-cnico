@@ -4,4 +4,4 @@ Olá, neste repositório contém os códigos do desafio técnico proposto pela E
 
 Para testar o código javascript, basta abrir a página HTML, informar o número inteiro e clicar no botão calcular.
 
-Para testar o código Dart, basta utilizar o console no próprio vscode.
+Para testar o código Dart, basta ter o sdk dart instalado na máquina e utilizar o console no próprio vscode.
