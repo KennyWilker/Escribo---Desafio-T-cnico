@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Somatório de Divisíveis por 3 ou 5</title>
+  </head>
+  <body>
+    <h1>Calculadora de Somatório</h1>
+    <input
+      type="number"
+      id="numero"
+      placeholder="Insira um número inteiro positivo"
+    />
+    <button onclick="calcularSomatorio()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+      function somatorioDivisiveis(numero) {
+        let soma = 0; // Inicializa a variável soma como 0
+        for (let i = 1; i < numero; i++) {
+          // Loop de 1 até o número fornecido (não inclusivo)
+          if (i % 3 === 0 || i % 5 === 0) {
+            // Verifica se o número é divisível por 3 ou 5
+            soma += i; // Se for divisível, adiciona o número à soma
+          }
+        }
+        return soma; // Retorna o somatório calculado
+      }
+
+      function calcularSomatorio() {
+        const numero = parseInt(document.getElementById("numero").value); // Obtém o valor inserido pelo usuário
+        if (isNaN(numero) || numero <= 0) {
+          // Verifica se o valor não é um número ou é menor ou igual a zero
+          document.getElementById("resultado").textContent =
+            "Por favor, insira um número inteiro positivo válido."; // Exibe uma mensagem de erro
+        } else {
+          const resultado = somatorioDivisiveis(numero); // Chama a função para calcular o somatório
+          document.getElementById(
+            "resultado"
+          ).textContent = `O somatório dos números divisíveis por 3 ou 5 menores que ${numero} é ${resultado}`; // Exibe o resultado
+        }
+      }
+    </script>
+  </body>
+</html>
